@@ -14,6 +14,11 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
    AppRoutingModule,
-   ReactiveFormsModule
+   ReactiveFormsModule,
+   AngularFireModule.initializeApp(environment.firebase),
+   AngularFirestoreModule,
+   AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
